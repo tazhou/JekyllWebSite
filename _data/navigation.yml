@@ -8,3 +8,5 @@
   link: /test.html
 - name: Test2
   link: /test2.html
+- name: Blog
+  link: /blog.html
