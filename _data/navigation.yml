@@ -5,4 +5,6 @@
   link: /about.html
   color: green 
 - name: Test
+  link: /test.html
+- name: Test2
   link: /test2.html
