@@ -2,7 +2,7 @@ collections:
   authors:
     output: true
 
-default:
+defaults:
   - scope:
       path: ""
       type: "authors"
