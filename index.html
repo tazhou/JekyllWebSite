@@ -5,3 +5,22 @@ title: Home
 
     <h1>{{ "Hello World!!" | downcase }}</h1>
 
+<script >
+    document.write("<p>This is string is writen by a script</p>");
+</script>
+
+
+<button type="button" onclick="alert('别这么大力点!')">大力点我！</button>
+
+<p id="phase1"> This is a phase </p>
+
+<script>
+function myFirstJSFunction() {
+    
+    x = document.getElementById("phase1");
+    x.innerHTML = "I change the phase to AAA";
+}
+</script>
+<button type="button" onclick="myFirstJSFunction()">点这里改变上面的标题输出</button>
+
+
