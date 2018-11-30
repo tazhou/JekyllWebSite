@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Js Test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <p id="p1"> This is the original p1</p>
+    <button type="button" onclick="changeP1()"> Try it</button>
+
+    <br>
+    <script>
+        varTest();
+    </script>
+
+    <br>
+    <p id="demo1"></p>
+    <script>
+        var carname = "Ford";
+        document.getElementById("demo1").innerHTML=carname; 
+    </script>
+
+    <br>
+    <script>
+        arrayTest();
+    </script>
+
+    <br>
+    <script>
+        objectTest();
+    </script>
+
+    <br>
+    <script>
+        var a = 4;
+        var b = 5;
+        argTest(6,7);// call the functon with arg
+
+    </script>
+    <button onclick="argTest(10,11)">Click Me</button>
+
+    <br>
+    <p id="ifTest"></p>
+    <script>
+        function conditionTest(){
+
+            var hour = new Date().getHours();
+            if(hour > 20) {
+
+                document.getElementById("ifTest").innerHTML = "Good night";
+            } else {
+                document.getElementById("ifTest").innerHTML = "Good morning!";
+            }
+        }
+    </script>
+    <button onclick="conditionTest()">If hour > 20, you will get a GN!</button>
+
+    <br>
+    <p id="switchTest"></p>
+    <script>
+        function switchTest(){
+
+            var result = "";
+            var day = new Date().getDay();
+
+            switch(day){
+                case 0:{
+                    result = "Today is Sunday";
+                    break;
+                }
+                case 1:{
+                    result = "Today is Monday";
+                    break;
+                }
+                case 2:{
+                    result = "Today is Tuesday";
+                    break;
+                }
+                case 3:{
+                    result = "Today is Wednsday";
+                    break;
+                }
+                case 4:{
+                    result = "Today is Thursday";
+                    break;
+                }
+                case 5:{
+                    result = "Today is Friday";
+                    break;
+                }
+                case 6:{
+                    result = "Today is Saturday";
+                    break;
+                }
+                default:{
+                    break;
+                }
+            }
+            document.getElementById("switchTest").innerHTML = result;
+
+        }
+    </script>
+    <button onclick="switchTest()">Print the day</button>
+
+    <p id="forLoopTest"></p>
+    <script>
+    function forLoopTest(){
+
+        var x = "";
+
+        for(var i = 0; i <= 5 ; i++ ){
+
+            x = x+"the number of i " + i.toString() + "</br>";
+        }
+
+        document.getElementById("forLoopTest").innerHTML = x;
+        
+    }
+    </script>
+    <button onclick="forLoopTest()">点我进行ForLoop测试</button>
+
+    <p id="forInLoopTest"></p>
+    <script>
+    function forInLoopTest(){
+        var x;
+        var txt = "";
+        var testObject = {
+            obj1 : "aaa",
+            obj2 : "bbb",
+            obj3 : "ccc"
+        }
+
+        for(x in testObject){
+            txt = txt + testObject[x] + "</br>" ;
+        }
+
+        document.getElementById("forInLoopTest").innerHTML = txt;
+    }
+    </script>
+    <button onclick="forInLoopTest()">点我进行For in Loop 测试</button>
+
+
+    <p id="exceptionTest"></p>
+    <script>
+    var txt = "";
+    function exceptionTest(){
+        try{
+            var i ;
+            foor();
+            //adddlert("Welcome guest!");
+
+        }
+        catch(err)
+        {
+            txt = "There is an error on this page";
+            txt += "Description:" + err.message + "\n\n";
+            txt += "Click Ok to continue";
+            alert(txt);
+
+        }
+    }   
+
+    function throwTest(){
+        try{
+            var input;
+            input = document.getElementById("throwTestInput").value;
+            if(input == "") throw "empty";
+            if(isNaN(input)) throw "not an number";
+            if(input > 10) throw "larger than 10";
+            if(input < 5) throw "less than 5";
+        }
+        catch(err){
+            
+            document.getElementById("exceptionTest").innerHTML = "Error: " + err + ".";
+        }
+    }
+    </script>
+    <button onclick="exceptionTest()">点我进行异常测试</button>
+    <p>Pls input an number</p>
+    <input  id="throwTestInput" type="text">
+    <button onclick="throwTest()">点我进行Throw Test</button>
+
+</body>
+</html>
